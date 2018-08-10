@@ -30,7 +30,7 @@ notify_success:
   only:
     - master
   script: 
-    - curl -X POST -H 'Content-Type: application/json' --data '{"text":"New Hass config deployed successfully!"}' "https://chat.bryantgeeks.com/hooks/$ROCKET_CHAT_TOKEN"
+    - curl -X POST -H "Content-Type: application/json" --data {"text":"New Hass config deployed successfully!"} "https://chat.bryantgeeks.com/hooks/$ROCKET_CHAT_TOKEN"
 
 notify_fail:
   stage: notify
