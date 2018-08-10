@@ -1,0 +1,42 @@
+stages:
+  - test
+  - deploy
+  - notify
+
+test:
+  stage: test
+  image: homeassistant/amd64-homeassistant
+  script:
+    - hass --script check_config -c .
+
+deploy:
+  stage: deploy
+  only:
+    - master
+  before_script:
+    - 'which ssh-agent || ( apk update && apk add openssh-client )'
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+  script:
+    - ssh $DEPLOY_USER@$DEPLOY_HOST "cd '$DEPLOY_PATH'; git pull; sudo systemctl restart home-assistant@homeassistant"
+
+notify_success:
+  stage: notify
+  allow_failure: true
+  only:
+    - master
+  script: 
+    - curl -X POST -H 'Content-Type: application/json' --data '{"text":"New Hass config deployed successfully!"}' https://chat.bryantgeeks.com/hooks/$ROCKET_CHAT_TOKEN
+
+notify_fail:
+  stage: notify
+  allow_failure: true
+  only:
+    - master
+  when: on_failure
+  script: 
+    - curl -X POST -H 'Content-Type: application/json' --data '{"text":"New Hass config failed. Please check for errors!"}' https://chat.bryantgeeks.com/hooks/$ROCKET_CHAT_TOKEN
