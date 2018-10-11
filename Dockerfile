@@ -3,3 +3,4 @@ asdfd
 foo
 asdfsdf
 asdfdsf
+bar
