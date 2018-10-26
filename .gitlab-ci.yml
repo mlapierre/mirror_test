@@ -1,0 +1,9 @@
+variables:
+  BEFORE_COMMENT: "before"
+  # comment
+  AFTER_COMMENT: "after"
+
+job:
+  script:
+    echo "BEFORE_COMMENT: $BEFORE_COMMENT"
+    echo "AFTER_COMMENT: $AFTER_COMMENT"
