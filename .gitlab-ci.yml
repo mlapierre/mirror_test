@@ -1,9 +1,15 @@
 variables:
-  BEFORE_COMMENT: "before"
-  # comment
-  AFTER_COMMENT: "after"
+  DOCKER_DRIVER: overlay2
+  DOCKER_HOST: tcp://docker:2375
+  QA_ARTIFACTS_DIR: $CI_PROJECT_DIR
+  GITLAB_USERNAME: gitlab-qa
+  GITLAB_QA_VERSION: 2.6.0
+  SIGNUP_DISABLED: 'true'
+  # The password contains $ so we need to wrap around it
+  # to workaround https://gitlab.com/gitlab-org/gitlab-ce/issues/27436
+  GITLAB_FORKER_PASSWORD: $GITLAB_FORKER_PASSWORD_INPUT
+
 
 job:
   script:
-    echo "BEFORE_COMMENT $BEFORE_COMMENT"
-    echo "AFTER_COMMENT $AFTER_COMMENT"
+    echo "GITLAB_FORKER_PASSWORD $GITLAB_FORKER_PASSWORD"
