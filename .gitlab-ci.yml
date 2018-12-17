@@ -1,5 +1,6 @@
 git-timeout:
   script:
     - git clone https://gitlab.com/mlapierre/test.git
+    - cd test
     - git push https://gitlab.com/mlapierre/test.git
     
