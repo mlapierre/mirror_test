@@ -1,1 +1,2 @@
 lfs.file filter=lfs diff=lfs merge=lfs -text
+another_lfs.file filter=lfs diff=lfs merge=lfs -text
