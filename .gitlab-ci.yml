@@ -1,5 +1,6 @@
-only-changes:
+include:
+  - local: 'include1.yml'
+  - local: 'include2.yml'
+
+merge-scripts:
   script: echo "I ran!"
-  only:
-    changes:
-      - "some_dir/**/*"
