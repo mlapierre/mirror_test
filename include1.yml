@@ -1,0 +1,3 @@
+merge-scripts:
+  before_script:
+    - echo "I'm in include1.yml"
