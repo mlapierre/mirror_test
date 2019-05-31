@@ -3,5 +3,6 @@ include:
   - local: 'include2.yml'
 
 merge-scripts:
+  extends: .merge-before-scripts
   script:
     - echo "I ran!"
