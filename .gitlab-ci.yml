@@ -25,3 +25,10 @@ test:
   stage: test
   script:
     - ./runmytests.sh
+
+something:
+  stage: test
+  script: echo "I ran!"
+  only:
+    changes:
+      - "some_dir/**/*"
