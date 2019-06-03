@@ -3,6 +3,4 @@ report:
     - echo "done"
   artifacts:
     reports:
-      junit: **/junit_rspec.xml
-    paths:
-      - qa
+      junit: ./**/junit_rspec.xml
