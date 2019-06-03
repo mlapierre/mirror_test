@@ -1,4 +1,6 @@
 report:
+  script:
+    - echo "done"
   artifacts:
     reports:
       junit: qa/**/junit_rspec.xml
