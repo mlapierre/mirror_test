@@ -1,5 +1,6 @@
-only-changes:
-  script: echo "I ran!"
-  only:
-    changes:
-      - "some_dir/**/*"
+report:
+  artifacts:
+    reports:
+      junit: qa/**/junit_rspec.xml
+    paths:
+      - qa
