@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="rspec" tests="4" skipped="3" failures="1" errors="0" time="134.905153" timestamp="2019-06-03T05:55:52+00:00" hostname="b0bdbc4a5d90">
+<properties>
+<property name="seed" value="3601"/>
+</properties>
+<testcase classname="qa.specs.features.browser_ui.3_create.repository.add_list_delete_branches_spec" name="Create Create, list, and delete branches via web branches are correctly listed after CRUD operations" file="./qa/specs/features/browser_ui/3_create/repository/add_list_delete_branches_spec.rb" time="0.000014"><skipped/></testcase>
+<testcase classname="qa.specs.features.browser_ui.3_create.repository.push_mirroring_over_http_spec" name="Create Push mirror a repository over HTTP configures and syncs a (push) mirrored repository" file="./qa/specs/features/browser_ui/3_create/repository/push_mirroring_over_http_spec.rb" time="0.000005"><skipped/></testcase>
+<testcase classname="qa.specs.features.browser_ui.1_manage.project.import_github_repo_spec" name="Manage Project import from GitHub user imports a GitHub repo" file="./qa/specs/features/browser_ui/1_manage/project/import_github_repo_spec.rb" time="0.000013"><skipped/></testcase>
+<testcase classname="qa.specs.features.api.3_create.repository.files_spec" name="API basics user creates a project with a file and deletes them afterwards" file="./qa/specs/features/api/3_create/repository/files_spec.rb" time="134.622490"><failure message="login_page did not appear on QA::Page::Main::Login as expected" type="QA::Page::Validatable::PageValidationError">Failure/Error: create_project_request = Runtime::API::Request.new(@api_client, &apos;/projects&apos;)
+
+QA::Page::Validatable::PageValidationError:
+  login_page did not appear on QA::Page::Main::Login as expected
+./qa/page/validatable.rb:16:in `block in validate_elements_present!&apos;
+./qa/page/validatable.rb:11:in `each&apos;
+./qa/page/validatable.rb:11:in `validate_elements_present!&apos;
+./qa/runtime/browser.rb:36:in `visit&apos;
+./qa/runtime/api/client.rb:29:in `create_personal_access_token&apos;
+./qa/runtime/api/client.rb:21:in `personal_access_token&apos;
+./qa/runtime/api/request.rb:10:in `initialize&apos;
+./qa/specs/features/api/3_create/repository/files_spec.rb:15:in `new&apos;
+./qa/specs/features/api/3_create/repository/files_spec.rb:15:in `block (2 levels) in &lt;module:QA&gt;&apos;
+/usr/local/bundle/gems/rspec-retry-0.6.1/lib/rspec/retry.rb:123:in `block in run&apos;
+/usr/local/bundle/gems/rspec-retry-0.6.1/lib/rspec/retry.rb:110:in `loop&apos;
+/usr/local/bundle/gems/rspec-retry-0.6.1/lib/rspec/retry.rb:110:in `run&apos;
+/usr/local/bundle/gems/rspec-retry-0.6.1/lib/rspec_ext/rspec_ext.rb:12:in `run_with_retry&apos;
+./spec/spec_helper.rb:46:in `block (2 levels) in &lt;top (required)&gt;&apos;
+/usr/local/bundle/gems/rspec-retry-0.6.1/lib/rspec/retry.rb:123:in `block in run&apos;
+/usr/local/bundle/gems/rspec-retry-0.6.1/lib/rspec/retry.rb:110:in `loop&apos;
+/usr/local/bundle/gems/rspec-retry-0.6.1/lib/rspec/retry.rb:110:in `run&apos;
+/usr/local/bundle/gems/rspec-retry-0.6.1/lib/rspec_ext/rspec_ext.rb:12:in `run_with_retry&apos;
+/usr/local/bundle/gems/rspec-retry-0.6.1/lib/rspec/retry.rb:37:in `block (2 levels) in setup&apos;
+./qa/specs/runner.rb:56:in `perform&apos;
+./qa/scenario/template.rb:10:in `block in perform&apos;
+./qa/scenario/template.rb:8:in `tap&apos;
+./qa/scenario/template.rb:8:in `perform&apos;
+./qa/scenario/template.rb:33:in `perform&apos;
+./qa/scenario/template.rb:10:in `block in perform&apos;
+./qa/scenario/template.rb:8:in `tap&apos;
+./qa/scenario/template.rb:8:in `perform&apos;
+./qa/scenario/bootable.rb:28:in `launch!&apos;</failure></testcase>
+</testsuite>
