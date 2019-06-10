@@ -1,5 +1,2 @@
-only-changes:
-  script: echo "I ran!"
-  only:
-    changes:
-      - "some_dir/**/*"
+include:
+  template: SAST.gitlab-ci.yml
