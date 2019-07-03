@@ -8,6 +8,8 @@ review_app_bug:
 
 stop_review_app_bug:
   stage: test
+  variables:
+    GIT_STRATEGY: none  
   script:
     - echo "stopped"
   when: manual
@@ -25,6 +27,8 @@ review_app_doc:
 
 stop_review_app_doc:
   stage: deploy
+  variables:
+    GIT_STRATEGY: none  
   script:
     - echo "stopped"
   when: manual
