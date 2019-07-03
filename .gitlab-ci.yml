@@ -1,6 +1,6 @@
 only_merge_requests:
   stage: test
   script:
-    - "done"
+    - echo "done"
   only:
   - merge_requests    
