@@ -9,6 +9,9 @@ stages:
 
 build DEB package:
   stage: build
+  artifacts:
+    paths:
+      - ./
   script:
     - echo "content" > image.deb
 
