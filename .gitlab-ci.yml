@@ -10,5 +10,6 @@ build DEB package:
     - echo "content" > image.deb
 
 deliver Docker image:
+  stage: deliver
   script:
     - cat image.deb
