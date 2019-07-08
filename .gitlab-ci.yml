@@ -1,24 +1,14 @@
 image: ubuntu:18.04
 
-services:
-  - docker:dind
-
 stages:
   - build
   - deliver
 
 build DEB package:
   stage: build
-  artifacts:
-    paths:
-      - ./
   script:
     - echo "content" > image.deb
 
 deliver Docker image:
-  image: docker:18.09
-  stage: deliver
-  dependencies: 
-    - build DEB package
   script:
     - cat image.deb
