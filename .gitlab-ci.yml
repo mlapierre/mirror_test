@@ -1,34 +1,9 @@
-review_app_bug:
-  stage: test
-  script:
-    - echo "deployed"
-  environment:
-    name: review_bug
-    on_stop: stop_review_app_bug
+image: busybox:latest
 
-stop_review_app_bug:
-  stage: test
-  script:
-    - echo "stopped"
-  when: manual
-  environment:
-    name: review_bug
-    action: stop
+stages:
+  - build
 
-review_app_doc:
-  stage: deploy
+build1:
+  stage: build
   script:
-    - echo "deployed"
-  environment:
-    name: review_doc
-    on_stop: stop_review_app_doc
-
-stop_review_app_doc:
-  stage: deploy
-  script:
-    - echo "stopped"
-  when: manual
-  environment:
-    name: review_doc
-    action: stop
-    
+    - echo -e "abc - \e[31mdef\e[0m    ghi"
