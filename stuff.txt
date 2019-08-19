@@ -2,3 +2,5 @@ lipsum
 merge
 
 foo
+
+bar
