@@ -4,3 +4,10 @@ artifacts:
   artifacts:
     paths:
       - stuff.txt
+
+more artifacts:
+  script:
+    - echo "done"
+  artifacts:
+    paths:
+      - readme.md
