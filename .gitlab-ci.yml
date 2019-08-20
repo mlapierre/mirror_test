@@ -1,6 +1,6 @@
 artifacts:
   script:
-    - echo "done"
+    - echo "done!"
   artifacts:
     paths:
       - stuff.txt
