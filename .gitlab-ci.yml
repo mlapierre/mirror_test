@@ -11,3 +11,4 @@ more artifacts:
   artifacts:
     paths:
       - readme.md
+    expire_in: "1 min"
