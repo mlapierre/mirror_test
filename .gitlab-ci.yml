@@ -7,7 +7,7 @@ artifacts:
 
 more artifacts:
   script:
-    - echo "done"
+    - echo "done!"
   artifacts:
     paths:
       - readme.md
